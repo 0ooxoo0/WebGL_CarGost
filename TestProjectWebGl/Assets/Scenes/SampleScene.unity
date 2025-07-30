@@ -354,6 +354,7 @@ MonoBehaviour:
   _recordInterval: 0.05
   _player: {fileID: 1417145684999481547}
   _ghostPrefab: {fileID: 2835362994775903439, guid: e32567fb1955ad9488e15344f20e369b, type: 3}
+  _recordedFrames: []
 --- !u!4 &88066427
 Transform:
   m_ObjectHideFlags: 0

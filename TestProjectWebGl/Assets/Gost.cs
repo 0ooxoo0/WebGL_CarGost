@@ -3,16 +3,20 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    private List<GhostFrame> _frames;
+    public List<GhostFrame> _frames;
     private float _startTime;
-    private int _currentIndex;
+    public int _currentIndex;
 
     /// <summary>
     /// Инициализация призрака данными
     /// </summary>
     public void Initialize(List<GhostFrame> frames)
     {
-        _frames = frames;
+        Debug.Log("Initialize");
+        foreach (var frame in frames)
+        {
+            _frames.Add(frame);
+        }
         _startTime = Time.time;
         _currentIndex = 0;
 
@@ -41,6 +45,7 @@ public class Ghost : MonoBehaviour
         // Проверка на завершение траектории
         if (_currentIndex >= _frames.Count - 1)
         {
+            Debug.Log("Destroy");
             Destroy(gameObject);
             // Можно добавить событие завершения
             return;
